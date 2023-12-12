@@ -21,16 +21,3 @@ def hello(request):
     else:
         return redirect('index')
     
-import requests
-
-def alpaca_sma_view(request):
-    # Fetch files from the Alpaca-SMA repository
-    url = "https://raw.githubusercontent.com/dbohn94/Alpaca-SMA/main/bot.py"  # Example URL
-    response = requests.get(url)
-    file_content = response.text
-
-    # Process the file content as needed
-    # ...
-
-    # Render the template with the file content
-    return render(request, 'alpaca_sma_page.html', {'file_content': file_content})
